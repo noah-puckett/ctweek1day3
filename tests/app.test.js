@@ -7,6 +7,7 @@ describe('application path routing', () => {
         return request(app)
             .get('/')
             .then(res => {
+                expect(res.status).toEqual(200);
                 expect(res.text).toEqual(expect.stringContaining('<h1>*flicks light switch rapidly* WELCOME TO HELL WELCOME TO HELL WELCOME TO HELL</h1>'))
             })
     }); 
@@ -15,6 +16,7 @@ describe('application path routing', () => {
         return request(app)
             .get('/red')
             .then(res => {
+                expect(res.status).toEqual(200);
                 expect(res.text).toEqual(expect.stringContaining('<style>span { color: green}</style><h1>WELCOME TO THE <span>RED</span> ZONE</h1>'))
             })
     }); 
@@ -23,6 +25,7 @@ describe('application path routing', () => {
         return request(app)
             .get('/blue')
             .then(res => {
+                expect(res.status).toEqual(200);
                 expect(res.text).toEqual(expect.stringContaining('<style>span { color: red}</style><h1>WELCOME TO THE <span>BLUE</span> ZONE</h1>'))
             })
     }); 
@@ -31,6 +34,7 @@ describe('application path routing', () => {
         return request(app)
             .get('/green')
             .then(res => {
+                expect(res.status).toEqual(200);
                 expect(res.text).toEqual(expect.stringContaining('<style>span { color: blue}</style><h1>WELCOME TO THE <span>GREEN</span> ZONE</h1>'))
             })
     }); 
