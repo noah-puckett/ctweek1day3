@@ -35,4 +35,13 @@ describe('application path routing', () => {
             })
     }); 
 
+    it('returns a failure message and a status of 404', () => {
+        return request(app)
+            .get('/failure')
+            .then(res => {
+                expect(res.status).toEqual(404);
+                expect(res.text).toEqual(expect.stringContaining(`<h1>OH YOU'VE DONE IT NOW!</h1>`));
+            });
+    }); 
+
 });
