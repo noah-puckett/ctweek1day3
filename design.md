@@ -15,3 +15,27 @@
 1. When we read the file, we need to maybe store contents in a variable?
 
 1. Interpolate page contents into response
+
+
+
+unction namePending(url) {
+    // let resultContent = '';
+
+    readDirectory('./public', (err, files) => {
+        
+        if(err) {
+            return console.log(err);
+        }
+
+        files.forEach(file => {
+            if(url.pathname.includes(file)) {
+                readFile(file, (err, fileData) => {
+                    if(err) return err;
+                    console.log(fileData);
+                    return fileData;
+                });
+            }
+        });
+    });
+    // return resultContent;
+} 
