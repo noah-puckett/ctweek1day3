@@ -20,23 +20,4 @@ describe('application path routing', () => {
                 expect(res.text).toEqual(expect.stringContaining('WELCOME'));
             });
     });
-
-    // it('returns welcome if path is /', () => {
-    //     return request(app)
-    //         .get('/')
-    //         .then(res => {
-    //             expect(res.status).toEqual(200);
-    //             expect(res.text).toEqual(expect.stringContaining('<h1>*flicks light switch rapidly* WELCOME TO HELL WELCOME TO HELL WELCOME TO HELL</h1>'));
-    //         });
-    // }); 
-
-    // it('returns a failure message and a status of 404', () => {
-    //     return request(app)
-    //         .get('/failure')
-    //         .then(res => {
-    //             expect(res.status).toEqual(404);
-    //             expect(res.text).toEqual(expect.stringContaining('<h1>OH YOU\'VE DONE IT NOW!</h1>'));
-    //         });
-    // }); 
-
 });
